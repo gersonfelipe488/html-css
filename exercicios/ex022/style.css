@@ -1,0 +1,24 @@
+body{
+    background-image: url('imagens/wallpaper001.jpg');
+}
+
+div.quadrado{
+            border: 2px solid black;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: lightblue;
+}
+
+div#q1{
+    background-color: aqua;
+}
+
+div#q2{
+    background-image: linear-gradient(to bottom, green, red);
+} 
+
+div#q3{
+    
+} /* adiciona uma imagem ao fundo */
+
