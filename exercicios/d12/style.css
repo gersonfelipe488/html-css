@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+:root{
+    --font01: Arial, Helvetica, sans-serif;
+    --font02: "Special Gothic Expanded One", sans-serif;
+    --font03: "Dancing Script", cursive;
+}
+
+
 *{
     padding: 0px;
     margin: 0px;
@@ -8,26 +20,30 @@
 html, body{
     min-height: 100%;
     background-color: darkgray;
+    font-family: var(--font01);
 }
 
 header{
-    height: 150px;
     text-align: center;
     background-color: black;
     color: white;
     padding: 10px;
+    
 }
 
 header h1{
     
-    padding-top: 35px;
+    padding-top: 50px;
     margin: 10px;
     font-variant: small-caps; 
+    font-family: var(--font02);
+    font-size: 5vw; /* fonte aumenta ou diminui de acordo com  o tamanho da largura da tela */
     
 }
 header p{
-    
+    padding-bottom: 50px;
     color: rgba(255, 255, 255, 0.699);
+    
 }
 header a, footer a{
     color: white;
@@ -43,6 +59,8 @@ section{
     padding-bottom: 10%;
     line-height: 2em;
     padding-left: 20px;
+    font-family: var(--font03);
+    font-size: 4vw; /* fonte aumenta ou diminui de acordo com  o tamanho da largura da tela */
 }
 
 section.normal{
@@ -57,8 +75,10 @@ section.imagem{
 }
 
 section.imagem >p{
+    display: inline-block; /* caixa vai se adaptar ao tamanho do conteúdo */
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.253);
-    width: 400px;
+    
 }
 footer{
     background-color: black;
