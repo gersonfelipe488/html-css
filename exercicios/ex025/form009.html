@@ -3,120 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>Document</title>
 </head>
 <body>
-    <fieldset>
-        <legend>Dados Pessoais</legend>
-        <form action="cadastro.php" method="post" autocomplete="on">
-            <p>
-                <label for="inome">Nome:</label>
-                <input type="text" name="nome" id="inome" minlength="5" maxlength="15" size="10" autocomplete="name" required>
-            </p>
-
-            <p>
-                <label for="isenha">Senha:</label>
-                <input type="password" name="senha" id="isenha" required minlength="8" maxlength="20" size="8" placeholder="senha" autocomplete="current-password">
-            </p>
-            <p>
-                <label for="imedia">Média</label>
-                <input type="number" name="media" id="imedia" min="0" max="10" placeholder="0 a 10" step="0.1" required value="5">
-            </p>
-            <p>
-                <label for="imes">Período letivo</label>
-                <input type="month" name="mes" id="imes" value="2020-07">
-            </p>
-            <p>
-                <label for="idia">Dia da prova</label>
-                <input type="date" name="dia" id="idia" value="2040-12-30">
-            </p>
-            <p>
-                <label for="ihora">Hora da prova</label>
-                <input type="time" name="hora" id="ihora">
-            </p>
-            <p>
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Limpar">
-            </p>
-            <p>
-                <label for="iemail">E-mail</label>
-                <input type="email" name="e-mail" id="i-email"required autocomplete="email">
-            </p>
-            <p>
-                <label for="itel">Telefone</label>
-                <input type="tel" name="telefone" id="itel" autocomplete="tel" pattern="^\(\d{2}\)\d{4}-\d{4}$" placeholder="(xx)xxxx-xxxx">
-            </p>
-            <p>
-                <h2>Sexo:</h2>
-                <input type="radio" name="sexo" id="isxmas" value="M"> 
-                <label for="isxmas">Masculino</label> <br>
-                <input type="radio" name="sexo" id="isxfem" value="F" checked>
-                <label for="isxfem">Feminino</label>
-            </p>
-            <p> 
-                <h2>Esportes:</h2>
-                <input type="checkbox" name="esfut" id="iesfut"> <label for="iesfut">Futebol </label><br>
-                <input type="checkbox" name="esbasq" id="iesbasq"> <label for="iesbasq">Basquete</label> <br>
-                <input type="checkbox" name="esnat" id="iesnat"> <label for="iesnat">Natação</label> <br>
-                <input type="checkbox" name="esten" id="iesten"> <label for="iesten">Tênis</label>
-            </p>
-            <p>
-                <label for="icor">Cor </label>
-                <input type="color" name="cor" id="icor" value="#00ff00">
-            </p>
-
-            <p>
-                <label for="inivel">Nível de satisfção</label>
-                <input type="range" name="nivel" id="inivel" min="1" max="5" value="2">
-            </p>
-
-            <p>
-                <label for="ifoto">Foto de perfil:</label>
-                <input type="file" name="files" id="ifoto">
-
-            </p>
-            <p>
-                <label for="iest">Estado</label>
-                <select name="est" id="iest">
-                <option value=""selected>Escolha:</option>
-                <optgroup label="Região Sudeste">
-                    
-                    <option value="SP" > São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="MG">Minas Gerais</option>
-                    
-                </optgroup>
-
-                <optgroup label="Região Nordeste">
-                        
-                    <option value="PE">Pernambuco</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="BA">Bahia</option>
-                    
-                </optgroup>
-            </select>
-            
-        </p>
-
+    <form action="cadastro.php" method="get" autocomplete="on">
         <p>
-            <label for="iprof">Profissão</label>
-            <input type="text" name="prof" id="iprof" list="lstprof">
-            <datalist id="lstprof">
-                <option value="ADM">Administrador</option>
-                <option value="CONT">Contabilista</option>
-                <option value="Dev">Dsenvolvedor</option>
-            </datalist>
-        </p>
-        
-        <p>
-            <label for="imsg">Mensagem</label><br>
-            <textarea name="msg" id="imsg" cols="30" rows="10" placeholder="Sua Mensagem aqui.."></textarea>
+            <label for="inum">Número</label>
+            <input type="range" name="num" id="inum" min="0" max="10" value="5" oninput="ival.innerHTML = Number(inum.value)">
+            <output id="ival">5</output>
         </p>
         <p>
             <input type="submit" value="Enviar">
-            <input type="reset" value="limpar">
+            <input type="reset" value="Limpar">
         </p>
-        </form>
-    </fieldset>
+    </form>
+
+    <form action="cadastro.php" method="get">
+        <p>
+            <label for="iano">Em que ano você nasceu? </label>
+            <input type="number" name="ano" id="iano" min="1900" max="2026" >
+        </p>
+        <p>
+            <label for="iidade">Sua idade é:
+            <output id="iidade">0</output>
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+
+    <script>
+        function calcIdade() {
+            let atual = new Date().getFullYear()
+           iidade.innerHTML = Number(atual) - Number(iano.value)
+        }
+        
+    </script>
 </body>
 </html>
