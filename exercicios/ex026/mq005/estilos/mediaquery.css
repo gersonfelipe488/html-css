@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/*Typical Device Breakpoints(pontos de interrupção típicos):
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+Tabblet: de 768px até 1024px
+Desktop: de 1024px até 1280px
+Grandes telas: acima de 1280px */
+
+@media screen and (min-width: 768px) {
+    span#burguer{
+        display: none;
+    }
+    
+    menu{
+        display: block;
+    }
+
+
+menu ul li{
+    display: inline-block;
+}
+
+main{
+    width: 768px;
+}
+}
